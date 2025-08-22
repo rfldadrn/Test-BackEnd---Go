@@ -31,13 +31,13 @@ Opsi 2 : Jika tidak menggunakan Air (Manual)
   - Masuk ke terminal dengan path project dan jalankan perintah : go run main.go
 
 # Struktur Folder
-├── configs/        # Konfigurasi Viper & Koneksi Database
-├── controllers/    # Handler untuk endpoint
-├── helpers/        # Sementara hanya untuk kebutuhan reusable response API
-├── models/         # Struct dan GORM model
-├── routes/         # Setup routing dengan Mux
-├── .env            # Untuk konfigurasi aplikasi
-├── main.go         # Entry point aplikasi
+./configs/        # Konfigurasi Viper & Koneksi Database
+./controllers/    # Handler untuk endpoint
+./helpers/        # Sementara hanya untuk kebutuhan reusable response API
+./models/         # Struct dan GORM model
+./routes/         # Setup routing dengan Mux
+./.env            # Untuk konfigurasi aplikasi
+./main.go         # Entry point aplikasi
 
 
 
