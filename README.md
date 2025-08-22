@@ -4,12 +4,11 @@ Test Backend - Golang - PT Sharing Vision Indonesia
 Ini adalah project backend API yang dibangun menggunakan Golang dengan arsitektur modular.
 
 # Tech Stack
-| Library | Fungsi Utama | 
-| GORM | ORM untuk database (MySQL) | 
-| Viper | Manajemen konfigurasi (env, file, flag, dll) | 
-| Mux | Routing HTTP yang ringan dan fleksibel | 
-| Logrus | Logging terstruktur dan level-based | 
-| Air | Live reload saat development (opsional) | 
+- GORM   : ORM untuk database (MySQL) 
+- Viper  : Manajemen konfigurasi (env, file, flag, dll) 
+- Mux    : Routing HTTP yang ringan dan fleksibel 
+- Logrus : Logging terstruktur dan level-based 
+- Air    : Live reload saat development (opsional) 
 
 # Setup Database
 Setelah project berhasil di clone, import database yang ada dalam folder **Database** terlebih dahulu. Lalu sesuaikan nama database dengan konfigurasi **.ENV**
