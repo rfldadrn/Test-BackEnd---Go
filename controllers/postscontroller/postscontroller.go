@@ -44,6 +44,35 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	helpers.Response(w, 200, "List Posts", posts)
 }
 
+// Tambahan untuk kebutuhan FE
+func View(w http.ResponseWriter, r *http.Request) {
+	var posts []models.Posts
+
+	// Ambil parameter path
+	vars := mux.Vars(r)
+	statusStr := vars["status"]
+	limitStr := vars["limit"]
+	offsetStr := vars["offset"]
+
+	// Check and convert paramter
+	limit, err := strconv.Atoi(limitStr)
+	if err != nil || limit <= 0 {
+		limit = 10 //default
+	}
+	offset, err := strconv.Atoi(offsetStr)
+	if err != nil || offset < 0 {
+		offset = 0
+	}
+
+	// Get Data
+	if err := configs.DB.Where("status = ?", statusStr).Limit(limit).Offset(offset).Find(&posts).Error; err != nil {
+		helpers.Response(w, 500, err.Error(), nil)
+		return
+	}
+
+	helpers.Response(w, 200, "List Posts", posts)
+}
+
 func Create(w http.ResponseWriter, r *http.Request) {
 	var posts models.Posts
 
